@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarViewController" customModule="eWord" customModuleProvider="target">
+            <connections>
+                <outlet property="calender" destination="VcI-0a-VAg" id="blz-KO-K3Y"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="w2G-Tq-UDM">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VcI-0a-VAg" customClass="calenderView" customModule="eWord" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="VcI-0a-VAg" secondAttribute="trailing" id="4PO-Px-J5Y"/>
+                <constraint firstItem="VcI-0a-VAg" firstAttribute="top" secondItem="w2G-Tq-UDM" secondAttribute="top" id="Wk9-Mf-LtR"/>
+                <constraint firstAttribute="bottom" secondItem="VcI-0a-VAg" secondAttribute="bottom" id="hVJ-Xn-uFM"/>
+                <constraint firstItem="VcI-0a-VAg" firstAttribute="leading" secondItem="w2G-Tq-UDM" secondAttribute="leading" id="lX4-hg-Vhq"/>
+            </constraints>
+            <point key="canvasLocation" x="775" y="-209"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizViewController" customModule="eWord" customModuleProvider="target">
+            <connections>
+                <outlet property="quizView" destination="qQj-Yo-Lo5" id="Ukz-97-ggt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="gz4-T5-AY9">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQj-Yo-Lo5" customClass="QuizView" customModule="eWord" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="qQj-Yo-Lo5" secondAttribute="bottom" id="EEf-jj-TOR"/>
+                <constraint firstAttribute="trailing" secondItem="qQj-Yo-Lo5" secondAttribute="trailing" id="bZu-0p-ts4"/>
+                <constraint firstItem="qQj-Yo-Lo5" firstAttribute="top" secondItem="gz4-T5-AY9" secondAttribute="top" id="fxa-9k-hPN"/>
+                <constraint firstItem="qQj-Yo-Lo5" firstAttribute="leading" secondItem="gz4-T5-AY9" secondAttribute="leading" id="som-ay-Rpe"/>
+            </constraints>
+            <point key="canvasLocation" x="488" y="254"/>
+        </view>
+    </objects>
+</document>
