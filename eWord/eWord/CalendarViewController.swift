@@ -29,7 +29,6 @@ class CalendarViewController: UIViewController {
         
         let bundle = NSBundle(forClass: calenderView.self)
         calender = bundle.loadNibNamed("calenderView", owner: nil, options: nil)[0] as! calenderView
-        calender.frame = CGRectMake(0, 0, self.view.frame.width, self.view.frame.height)
         self.view.addSubview(calender)
         
     }

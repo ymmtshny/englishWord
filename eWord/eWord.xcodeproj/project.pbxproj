@@ -17,6 +17,7 @@
 		C5152C161CF6333A0042F1C3 /* QuizView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5152C151CF6333A0042F1C3 /* QuizView.xib */; };
 		C5152C191CF63A990042F1C3 /* calenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5152C181CF63A990042F1C3 /* calenderCell.swift */; };
 		C5152C1B1CF63AA70042F1C3 /* calenderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5152C1A1CF63AA70042F1C3 /* calenderCell.xib */; };
+		C5154CE21D217D51007E55B3 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5154CE11D217D51007E55B3 /* UIColor.swift */; };
 		C5649DE81D1C3205008AEC84 /* AnswersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5649DE71D1C3205008AEC84 /* AnswersModel.swift */; };
 		C5649DEA1D1C328B008AEC84 /* WordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5649DE91D1C328B008AEC84 /* WordsModel.swift */; };
 		C5649DEC1D1C32AD008AEC84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5649DEB1D1C32AD008AEC84 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		C5152C151CF6333A0042F1C3 /* QuizView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizView.xib; sourceTree = "<group>"; };
 		C5152C181CF63A990042F1C3 /* calenderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calenderCell.swift; sourceTree = "<group>"; };
 		C5152C1A1CF63AA70042F1C3 /* calenderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = calenderCell.xib; sourceTree = "<group>"; };
+		C5154CE11D217D51007E55B3 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		C5649DE71D1C3205008AEC84 /* AnswersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersModel.swift; sourceTree = "<group>"; };
 		C5649DE91D1C328B008AEC84 /* WordsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsModel.swift; sourceTree = "<group>"; };
 		C5649DEB1D1C32AD008AEC84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			children = (
 				C570195A1CEF1D2600D9B213 /* AppDelegate.swift */,
 				C5C0A4D91D2011A800DC9AAB /* Static.swift */,
+				C5154CE11D217D51007E55B3 /* UIColor.swift */,
 				C5E2EFEB1D1FC04700118A1B /* assets */,
 				C57019661CEF1D2600D9B213 /* LaunchScreen.storyboard */,
 				C5649DEB1D1C32AD008AEC84 /* Main.storyboard */,
@@ -395,6 +398,7 @@
 				C5152C141CF6332E0042F1C3 /* QuizView.swift in Sources */,
 				C56D24E11CFAEDF1003D1C72 /* articleView.swift in Sources */,
 				C5649DEA1D1C328B008AEC84 /* WordsModel.swift in Sources */,
+				C5154CE21D217D51007E55B3 /* UIColor.swift in Sources */,
 				C5E2EFDF1D1F9EE200118A1B /* QuizViewController.swift in Sources */,
 				C57019631CEF1D2600D9B213 /* eWord.xcdatamodeld in Sources */,
 				C502CB021CF149DE00CE6FF1 /* CustomCell.swift in Sources */,

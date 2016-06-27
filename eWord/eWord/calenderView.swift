@@ -21,12 +21,13 @@ class calenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     let weekArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
     var dateArray = [String]()
     
+    class func instance() -> calenderView {
+        return UINib(nibName: "calenderView", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! calenderView
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.myCollectionView.delegate = self;
-        self.myCollectionView.dataSource = self;
-        self.myCollectionView.registerClass(calenderCell.self, forCellWithReuseIdentifier: "calenderCell")
-        self.myCollectionView.backgroundColor = UIColor.whiteColor()
+        self.initialize()
 
     }
     
@@ -36,6 +37,16 @@ class calenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func initialize() {
+        self.myCollectionView.delegate = self;
+        self.myCollectionView.dataSource = self;
+        //これじゃなくて
+        //self.myCollectionView.registerClass(calenderCell.self, forCellWithReuseIdentifier: "calenderCell")
+        //これ！！！
+        self.myCollectionView.registerNib(UINib(nibName: "calenderCell", bundle: nil), forCellWithReuseIdentifier: "calenderCell")
+        self.myCollectionView.backgroundColor = UIColor.whiteColor()
     }
     
     //
@@ -72,19 +83,19 @@ class calenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("calenderCell", forIndexPath: indexPath) as! calenderCell
-
-// FIXME:nilで落ちる！fuck!!!
-//        if indexPath.section == 0 {
-//            
-//            cell.dateLabel!.text = weekArray[indexPath.row]
-//            
-//        } else {
-//            
-//            cell.dateLabel!.text = String(indexPath.row + 1)
-//            
-//        }
         
-        self.setColorLevelCell(cell, month: 6, date: indexPath.row + 1)
+        //曜日
+        if indexPath.section == 0 {
+            
+            cell.dateLabel!.text = weekArray[indexPath.row]
+        
+        //日付
+        } else {
+            
+            cell.dateLabel!.text = String(indexPath.row + 1)
+            self.setColorLevelCell(cell, month: 6, date: indexPath.row + 1)
+
+        }
         
         return cell
     }

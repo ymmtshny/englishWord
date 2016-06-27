@@ -18,7 +18,7 @@ enum colorLevel {
 class calenderCell: UICollectionViewCell {
     
     
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel! = UILabel()
     var level: colorLevel = colorLevel.level1
     
     override func awakeFromNib() {
@@ -28,12 +28,19 @@ class calenderCell: UICollectionViewCell {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        
+        //self.commonInit()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.commonInit()
+    }
     
+    func commonInit() {
+        let bundle = NSBundle(forClass: calenderCell.self)
+        let nib = UINib(nibName: "calenderCell", bundle: bundle)
+        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        self.addSubview(view)
     }
     
     //MARK:cellの色
@@ -41,13 +48,13 @@ class calenderCell: UICollectionViewCell {
         
         switch level {
         case .level0:
-            self.backgroundColor = UIColor.whiteColor()
+            self.backgroundColor = UIColor.rgb(r: 255, g: 255, b: 255, alpha: 1)
         case .level1:
-            self.backgroundColor = UIColor.whiteColor()
+            self.backgroundColor = UIColor.rgb(r: 245, g: 245, b: 245, alpha: 1)
         case .level2:
-            self.backgroundColor = UIColor.lightGrayColor()
+            self.backgroundColor = UIColor.rgb(r: 235, g: 235, b: 235, alpha: 1)
         case .level3:
-            self.backgroundColor = UIColor.grayColor()
+            self.backgroundColor = UIColor.rgb(r: 225, g: 225, b: 225, alpha: 1)
         }
     }
 }
