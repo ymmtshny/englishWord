@@ -4,14 +4,6 @@
 //
 //  Created by Shinya Yamamoto on 2016/05/20.
 //  Copyright © 2016年 Shinya Yamamoto. All rights reserved.
-//  ----------------------------------------
-//  ViewController
-//  tabBarView(済)
-//  wordListTableView(済)
-//  articleView
-//  QuizView(済)
-//  LevelSelectView(済)
-//  CalenderView
 
 import UIKit
 import CoreData
@@ -33,6 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        self.window?.rootViewController = myNavigationController
 //        self.window?.makeKeyAndVisible()
 //        myNavigationController?.navigationBarHidden = true
+        
+        let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Badge, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        
+        //バッジの数の設定.
+        UIApplication.sharedApplication().applicationIconBadgeNumber += 1
         
         return true
     }
