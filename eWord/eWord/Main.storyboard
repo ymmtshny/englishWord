@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--学習記録-->
         <scene sceneID="qPO-uP-HF6">
             <objects>
                 <viewController id="DOC-I2-0sI" customClass="CalendarViewController" customModule="eWord" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="vdG-bx-OC3"/>
+                    <tabBarItem key="tabBarItem" title="学習記録" id="vdG-bx-OC3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjw-rS-BeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="693" y="718"/>
+            <point key="canvasLocation" x="80" y="718"/>
         </scene>
         <!--WordList-->
         <scene sceneID="BOk-ID-RuD">
@@ -54,7 +54,7 @@
             </objects>
             <point key="canvasLocation" x="55" y="-70"/>
         </scene>
-        <!--Item-->
+        <!--クイズ-->
         <scene sceneID="iZ1-dg-3Is">
             <objects>
                 <viewController id="gNJ-5k-2Bl" customClass="QuizViewController" customModule="eWord" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,17 +67,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="eHa-o1-xEq"/>
+                    <tabBarItem key="tabBarItem" title="クイズ" id="eHa-o1-xEq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyN-Qz-HTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55" y="718"/>
+            <point key="canvasLocation" x="741" y="718"/>
         </scene>
-        <!--Item 1-->
+        <!--英単語一覧-->
         <scene sceneID="hD2-nH-hfZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Ocb-5C-n1a" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="qKN-YL-RaS"/>
+                    <tabBarItem key="tabBarItem" title="英単語一覧" id="qKN-YL-RaS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5u5-cm-5Oj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

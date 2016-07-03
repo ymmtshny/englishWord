@@ -49,7 +49,7 @@ class QuizView :UIView {
         
         for button in buttons {
             
-            button.addTarget(QuizViewController(), action: #selector(QuizViewController.tapAnswerButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            button.addTarget(QuizViewController(), action: #selector(QuizViewController.tapAnswerButton(_:)), forControlEvents: UIControlEvents.TouchDown)
             button.layer.cornerRadius = 15;
             button.layer.borderColor = UIColor(red: 245.0/255.0, green: 166.0/255.0, blue: 35.0/255.0, alpha: 1.0).CGColor
             button.layer.borderWidth = 2

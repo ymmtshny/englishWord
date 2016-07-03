@@ -20,7 +20,7 @@ class CalendarViewController: UIViewController {
     }
     
     func colorCalenderCell() {
-        calender.dateArray = AnswersModel().getAnswersDateArray()
+        calender.answerDateArray = AnswersModel().getAnswersDateArray()
         calender.myCollectionView.reloadData()
     }
     
