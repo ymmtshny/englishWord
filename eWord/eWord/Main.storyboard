@@ -21,19 +21,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjw-rS-BeM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="718"/>
+            <point key="canvasLocation" x="80" y="723"/>
         </scene>
         <!--WordList-->
         <scene sceneID="BOk-ID-RuD">
             <objects>
                 <viewController id="ZLY-VN-6ve" userLabel="WordList" customClass="WordListViewController" customModule="eWord" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="XeV-30-gYF"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Title" id="0QN-4f-hI5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="HxE-xp-k0f">
+                            <connections>
+                                <segue destination="wU9-9y-Xvk" kind="show" id="Lzk-oG-QCi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qb4-d9-1n7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-572" y="1522"/>
+        </scene>
+        <!--Word Book View Controller-->
+        <scene sceneID="2bp-dQ-cHu">
+            <objects>
+                <viewController id="wU9-9y-Xvk" customClass="WordBookViewController" customModule="eWord" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pXL-Gp-xdL"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZAT-U3-jif"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zce-t0-VCg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ayg-6C-3TR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-567" y="2376"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mCb-ei-dMA">
@@ -71,14 +94,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyN-Qz-HTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="741" y="718"/>
+            <point key="canvasLocation" x="740" y="723"/>
         </scene>
         <!--英単語一覧-->
         <scene sceneID="hD2-nH-hfZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Ocb-5C-n1a" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ocb-5C-n1a" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="英単語一覧" id="qKN-YL-RaS"/>
                     <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5u5-cm-5Oj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

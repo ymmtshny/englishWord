@@ -33,6 +33,9 @@ class CheckAnswerView :UIView {
         mainView.clipsToBounds = true
         okButton.addTarget(self, action: #selector(self.tapOKButton(_:)), forControlEvents: UIControlEvents.TouchDown)
         
+        self.okButton.layer.cornerRadius = 8.0
+        self.okButton.clipsToBounds = true
+        
     }
     
     override init(frame: CGRect) {

@@ -16,29 +16,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wGe-AN-rmM" customClass="wordListTabelView" customModule="eWord" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tL0-oL-SGS">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                    <items>
-                        <navigationItem title="英検５級" id="S0g-Rz-9Uo">
-                            <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="LRZ-06-j67"/>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="wGe-AN-rmM" firstAttribute="top" secondItem="tL0-oL-SGS" secondAttribute="bottom" id="5nw-bU-voH"/>
+                <constraint firstItem="wGe-AN-rmM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1ii-XF-YGe"/>
                 <constraint firstItem="wGe-AN-rmM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8ke-av-SG2"/>
-                <constraint firstItem="tL0-oL-SGS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GMh-dd-ZDE"/>
                 <constraint firstAttribute="bottom" secondItem="wGe-AN-rmM" secondAttribute="bottom" id="KcA-G2-IbX"/>
                 <constraint firstAttribute="bottom" secondItem="wGe-AN-rmM" secondAttribute="bottom" id="QJd-kl-CgR"/>
-                <constraint firstItem="tL0-oL-SGS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WhZ-j3-gH5"/>
                 <constraint firstItem="wGe-AN-rmM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="e7y-xv-ccQ"/>
-                <constraint firstAttribute="trailing" secondItem="tL0-oL-SGS" secondAttribute="trailing" id="jAf-Bx-JiS"/>
-                <constraint firstItem="wGe-AN-rmM" firstAttribute="top" secondItem="tL0-oL-SGS" secondAttribute="bottom" id="pFQ-Xy-m8i"/>
                 <constraint firstAttribute="trailing" secondItem="wGe-AN-rmM" secondAttribute="trailing" id="yqw-zb-1uZ"/>
             </constraints>
             <variation key="default">
@@ -47,7 +35,7 @@
                     <exclude reference="QJd-kl-CgR"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="208" y="316"/>
+            <point key="canvasLocation" x="209" y="263"/>
         </view>
     </objects>
 </document>

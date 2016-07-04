@@ -56,6 +56,7 @@ class QuizResultView :UIView {
         self.totalNumberLable.text = String(totalNumber)
         
         let percent = Double(correctNumber) / Double(totalNumber)
+        
         if percent == 1 {
             
         } else if percent > 0.9 {

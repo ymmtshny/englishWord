@@ -109,7 +109,15 @@ class QuizViewController: UIViewController, QuizViewDelegate, CheckAnswerViewDel
     
     @IBAction func tapAnswerButton(sender: UIButton) {
         
-        //sender.enabled = false
+        sender.enabled = false
+        
+        //１秒後にボタン押せるようにする。
+        let triggerTime = (Int64(NSEC_PER_SEC) * 1)
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, triggerTime), dispatch_get_main_queue(), { () -> Void in
+           sender.enabled = true
+        })
+        
+        
         solveTimes += 1;
         print("解答回数 \(solveTimes)")
         
@@ -122,8 +130,11 @@ class QuizViewController: UIViewController, QuizViewDelegate, CheckAnswerViewDel
         
         if(isCorret) {
             
-            self.quizView.check_image.alpha = 0
-            //UIView.animateWithDuration(1, animations: {}, completion: {(value: Bool) in })
+            UIView.animateWithDuration(1, animations: {
+                
+                self.quizView.check_image.alpha = 0
+                
+                }, completion: {(value: Bool) in })
             
         } else {
             
@@ -140,6 +151,8 @@ class QuizViewController: UIViewController, QuizViewDelegate, CheckAnswerViewDel
             self.showQuizResultView()
             
         }
+        
+        
     
         
     }

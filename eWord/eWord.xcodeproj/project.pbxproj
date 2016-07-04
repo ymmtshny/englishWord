@@ -25,6 +25,8 @@
 		C52B70E41D2A206500B12909 /* QuizSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52B70E31D2A206500B12909 /* QuizSettingView.xib */; };
 		C52B70E61D2A207F00B12909 /* QuizResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52B70E51D2A207F00B12909 /* QuizResultView.swift */; };
 		C52B70E81D2A208F00B12909 /* QuizResultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52B70E71D2A208F00B12909 /* QuizResultView.xib */; };
+		C52B70EA1D2A2FB600B12909 /* WordBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52B70E91D2A2FB600B12909 /* WordBookViewController.swift */; };
+		C52B70EC1D2A2FC400B12909 /* WordBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C52B70EB1D2A2FC400B12909 /* WordBookViewController.xib */; };
 		C5649DE81D1C3205008AEC84 /* AnswersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5649DE71D1C3205008AEC84 /* AnswersModel.swift */; };
 		C5649DEA1D1C328B008AEC84 /* WordsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5649DE91D1C328B008AEC84 /* WordsModel.swift */; };
 		C5649DEC1D1C32AD008AEC84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5649DEB1D1C32AD008AEC84 /* Main.storyboard */; };
@@ -74,6 +76,8 @@
 		C52B70E31D2A206500B12909 /* QuizSettingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizSettingView.xib; sourceTree = "<group>"; };
 		C52B70E51D2A207F00B12909 /* QuizResultView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizResultView.swift; sourceTree = "<group>"; };
 		C52B70E71D2A208F00B12909 /* QuizResultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizResultView.xib; sourceTree = "<group>"; };
+		C52B70E91D2A2FB600B12909 /* WordBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordBookViewController.swift; sourceTree = "<group>"; };
+		C52B70EB1D2A2FC400B12909 /* WordBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WordBookViewController.xib; sourceTree = "<group>"; };
 		C5649DE71D1C3205008AEC84 /* AnswersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswersModel.swift; sourceTree = "<group>"; };
 		C5649DE91D1C328B008AEC84 /* WordsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsModel.swift; sourceTree = "<group>"; };
 		C5649DEB1D1C32AD008AEC84 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -162,6 +166,24 @@
 				C52B70DE1D2A13EE00B12909 /* CheckAnswerView.xib */,
 			);
 			name = CheckAnswerView;
+			sourceTree = "<group>";
+		};
+		C52B70ED1D2A360600B12909 /* QuizResultView */ = {
+			isa = PBXGroup;
+			children = (
+				C52B70E51D2A207F00B12909 /* QuizResultView.swift */,
+				C52B70E71D2A208F00B12909 /* QuizResultView.xib */,
+			);
+			name = QuizResultView;
+			sourceTree = "<group>";
+		};
+		C52B70EE1D2A362200B12909 /* QuizSettingView */ = {
+			isa = PBXGroup;
+			children = (
+				C52B70E11D2A205600B12909 /* QuizSettingView.swift */,
+				C52B70E31D2A206500B12909 /* QuizSettingView.xib */,
+			);
+			name = QuizSettingView;
 			sourceTree = "<group>";
 		};
 		C56D24DA1CFADC9F003D1C72 /* wordListTableView */ = {
@@ -257,6 +279,8 @@
 			children = (
 				C570195C1CEF1D2600D9B213 /* WordListViewController.swift */,
 				C502CAFA1CF148CC00CE6FF1 /* WordListViewController.xib */,
+				C52B70E91D2A2FB600B12909 /* WordBookViewController.swift */,
+				C52B70EB1D2A2FC400B12909 /* WordBookViewController.xib */,
 				C5E2EFDE1D1F9EE200118A1B /* QuizViewController.swift */,
 				C5E2EFE01D1F9EF200118A1B /* QuizViewController.xib */,
 				C5E2EFE21D1F9F0C00118A1B /* ArticleViewController.swift */,
@@ -276,10 +300,8 @@
 				C5152C121CF633090042F1C3 /* LevelSelectView */,
 				C56D24E41CFAEE09003D1C72 /* articleView */,
 				C52B70E01D2A1CBC00B12909 /* CheckAnswerView */,
-				C52B70E11D2A205600B12909 /* QuizSettingView.swift */,
-				C52B70E31D2A206500B12909 /* QuizSettingView.xib */,
-				C52B70E51D2A207F00B12909 /* QuizResultView.swift */,
-				C52B70E71D2A208F00B12909 /* QuizResultView.xib */,
+				C52B70EE1D2A362200B12909 /* QuizSettingView */,
+				C52B70ED1D2A360600B12909 /* QuizResultView */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -364,6 +386,7 @@
 				C5DBA4C81CF0C6FB0056AB8C /* words.csv in Resources */,
 				C52B70DF1D2A13EE00B12909 /* CheckAnswerView.xib in Resources */,
 				C5152C161CF6333A0042F1C3 /* QuizView.xib in Resources */,
+				C52B70EC1D2A2FC400B12909 /* WordBookViewController.xib in Resources */,
 				C52B70E81D2A208F00B12909 /* QuizResultView.xib in Resources */,
 				C5E2EFEF1D1FC06C00118A1B /* wrong.mp3 in Resources */,
 			);
@@ -443,6 +466,7 @@
 				C56D24DC1CFADD38003D1C72 /* calenderView.swift in Sources */,
 				C5649DE81D1C3205008AEC84 /* AnswersModel.swift in Sources */,
 				C56D24D71CFAD8A4003D1C72 /* wordListTabelView.swift in Sources */,
+				C52B70EA1D2A2FB600B12909 /* WordBookViewController.swift in Sources */,
 				C52B70E21D2A205600B12909 /* QuizSettingView.swift in Sources */,
 				C5C0A4DA1D2011A800DC9AAB /* Static.swift in Sources */,
 			);

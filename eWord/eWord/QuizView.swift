@@ -63,14 +63,50 @@ class QuizView :UIView {
     internal func setupLabelWithQuizDic(QuizDic: [String:String]) {
         
         engLabel?.text = QuizDic["question"]
-        jpButtonA?.setTitle(QuizDic["optionA"], forState: UIControlState.Normal)
-        jpButtonB?.setTitle(QuizDic["optionB"], forState: UIControlState.Normal)
-        jpButtonC?.setTitle(QuizDic["optionC"], forState: UIControlState.Normal)
-        jpButtonD?.setTitle(QuizDic["optionD"], forState: UIControlState.Normal)
+        
+        switch self.getRandomNumber() {
+        case 0:
+            self.jpButtonA?.setTitle(QuizDic["optionA"], forState: UIControlState.Normal)
+            self.jpButtonB?.setTitle(QuizDic["optionB"], forState: UIControlState.Normal)
+            self.jpButtonC?.setTitle(QuizDic["optionC"], forState: UIControlState.Normal)
+            self.jpButtonD?.setTitle(QuizDic["optionD"], forState: UIControlState.Normal)
+            break
+        case 1:
+            self.jpButtonA?.setTitle(QuizDic["optionD"], forState: UIControlState.Normal)
+            self.jpButtonB?.setTitle(QuizDic["optionA"], forState: UIControlState.Normal)
+            self.jpButtonC?.setTitle(QuizDic["optionB"], forState: UIControlState.Normal)
+            self.jpButtonD?.setTitle(QuizDic["optionC"], forState: UIControlState.Normal)
+            break
+        case 2:
+            self.jpButtonA?.setTitle(QuizDic["optionC"], forState: UIControlState.Normal)
+            self.jpButtonB?.setTitle(QuizDic["optionD"], forState: UIControlState.Normal)
+            self.jpButtonC?.setTitle(QuizDic["optionA"], forState: UIControlState.Normal)
+            self.jpButtonD?.setTitle(QuizDic["optionB"], forState: UIControlState.Normal)
+            break
+        case 3:
+            self.jpButtonA?.setTitle(QuizDic["optionB"], forState: UIControlState.Normal)
+            self.jpButtonB?.setTitle(QuizDic["optionC"], forState: UIControlState.Normal)
+            self.jpButtonC?.setTitle(QuizDic["optionD"], forState: UIControlState.Normal)
+            self.jpButtonD?.setTitle(QuizDic["optionA"], forState: UIControlState.Normal)
+            break
+        default:
+            self.jpButtonA?.setTitle(QuizDic["optionD"], forState: UIControlState.Normal)
+            self.jpButtonB?.setTitle(QuizDic["optionC"], forState: UIControlState.Normal)
+            self.jpButtonC?.setTitle(QuizDic["optionB"], forState: UIControlState.Normal)
+            self.jpButtonD?.setTitle(QuizDic["optionA"], forState: UIControlState.Normal)
+        }
+        
     }
     
     @IBAction func tapAnswerButton(sender: UIButton) {
         self.delegate?.tapAnswerButton(sender)
+    }
+    
+    private func getRandomNumber() -> Int{
+        let count = UInt32(4)
+        let random = arc4random_uniform(count)
+        let randomInt = Int(random)
+        return randomInt
     }
     
     
