@@ -9,28 +9,90 @@
 import UIKit
 import AVFoundation
 
-class QuizViewController: UIViewController, QuizViewDelegate {
+class QuizViewController: UIViewController, QuizViewDelegate, CheckAnswerViewDelegate, QuizResultViewDelegate {
     
+    //UI
     @IBOutlet weak var quizView: QuizView!
     var levelSelectView:LevelSelectView!
+    var checkAnswerView: CheckAnswerView!
+    var quizResultView: QuizResultView!
     
+    //音声関係
     var correctAudioPlayer = AVAudioPlayer()
     var wrongAudioPlayer = AVAudioPlayer()
-    
     let correctSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("correct", ofType: "mp3")!)
     let wrongSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("wrong", ofType: "mp3")!)
     
+    //データ
     var quizDic = [String:String]()
-    
     var solveTimes = 0
+    var correctTimes = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.addQuizView()
         self.setQuestion()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setCheckAnswerView()
+        self.setQuizResultView()
+    }
+    
+    //MARK:クイズ結果のビュー
+    func setQuizResultView() {
+        
+        self.quizResultView = QuizResultView.instance()
+        self.quizResultView.delegate = self
+        self.quizResultView.frame = self.view.frame
+        self.quizResultView.hidden = true
+        self.view.addSubview(self.quizResultView)
+    }
+    
+    func showQuizResultView() {
+        self.quizResultView.setResultViewWith(self.correctTimes, totalNumber: self.solveTimes)
+        self.quizResultView.hidden = false
+        self.solveTimes = 0
+        self.correctTimes = 0
+    }
+    
+    
+    @IBAction func tapQuizResultViewOKButton(sender: UIButton) {
+        self.quizResultView.hidden = true
+    }
+    
+    
+    //MARK:答え確認のビュー
+    func setCheckAnswerView() {
+        self.checkAnswerView = CheckAnswerView.instance()
+        self.checkAnswerView.delegate = self
+        self.checkAnswerView.frame = self.view.frame
+        self.checkAnswerView.hidden = true
+        self.view.addSubview(self.checkAnswerView)
+    }
+    
+    
+    func showCheckAnswerView() {
+        self.checkAnswerView.engLabel.text = quizDic["question"]!
+        self.checkAnswerView.jpLabel.text = quizDic["answer"]!
+        self.checkAnswerView.hidden = false
+    }
+    
+    @IBAction func tapOKButton(sender: UIButton) {
+        self.quizView.check_image.alpha = 0
+        self.checkAnswerView.hidden = true
+        if(self.solveTimes < 10) {
+            
+            self.setQuestion()
+            
+        } else {
+            
+            self.showQuizResultView()
+            
+        }
     }
     
     //MARK:QuizView
@@ -47,47 +109,38 @@ class QuizViewController: UIViewController, QuizViewDelegate {
     
     @IBAction func tapAnswerButton(sender: UIButton) {
         
-        sender.enabled = false
+        //sender.enabled = false
         solveTimes += 1;
+        print("解答回数 \(solveTimes)")
         
         let userAnswer = sender.titleLabel?.text
         let quizAnswer = quizDic["answer"]!
         let quizEnglish = quizDic["question"]!
         
-        self.checkAnswer(userAnswer!,quizAnswer: quizAnswer, quizQuestion: quizEnglish)
+        //答え合わせと解答データを補保存
+        let isCorret = self.checkAnswer(userAnswer!,quizAnswer: quizAnswer, quizQuestion: quizEnglish)
         
-        UIView.animateWithDuration(1, animations: {
+        if(isCorret) {
             
             self.quizView.check_image.alpha = 0
+            //UIView.animateWithDuration(1, animations: {}, completion: {(value: Bool) in })
             
-            }, completion: {(value: Bool) in
-                
-                if(self.solveTimes < 10) {
-                    
-                    self.setQuestion()
-                    sender.enabled = true
-                
-                } else {
-                    
-                    //TODO:Staticメソッド作る
-                    let alert:UIAlertController = UIAlertController(title:"確認",
-                                                                  message:"10問解きました。",
-                        preferredStyle: UIAlertControllerStyle.Alert)
-                    
-                    let defaultAction:UIAlertAction = UIAlertAction(title:"OK",
-                        style: UIAlertActionStyle.Default,
-                        handler:{
-                            (action:UIAlertAction!) -> Void in
-                            
-                    })
-                    
-                    alert.addAction(defaultAction)
-                    self.presentViewController(alert, animated: true, completion: nil)
-                    self.solveTimes = 0;
-                    sender.enabled = true
-                }
-                
-        })
+        } else {
+            
+            self.showCheckAnswerView()
+            return
+        }
+        
+        if(self.solveTimes < 10) {
+            
+            self.setQuestion()
+            
+        } else {
+            
+            self.showQuizResultView()
+            
+        }
+    
         
     }
     
@@ -99,10 +152,12 @@ class QuizViewController: UIViewController, QuizViewDelegate {
         
     }
     
+    //答え合わせをするとともに解答データを保存する。
     private func checkAnswer(userAnswer :String,
                              quizAnswer :String,
-                           quizQuestion :String) {
+                           quizQuestion :String) -> Bool{
         
+        var isCorrect = false
         let answerModel = AnswersModel()
         var wordModel = WordsModel()
         
@@ -112,13 +167,17 @@ class QuizViewController: UIViewController, QuizViewDelegate {
         if userAnswer == quizAnswer {
             
             print("CORRECT")
+            correctTimes += 1
+            isCorrect = true
             quizView.check_image.image = UIImage(named:"correct")!
             answerModel.isCorrect = "true"
             self.soundAnswerCheck(correct: true)
             
+            
         } else {
             
             print("WRONG")
+            isCorrect = false
             quizView.check_image.image = UIImage(named:"wrong")!
             answerModel.isCorrect = "false"
             self.soundAnswerCheck(correct: false)
@@ -130,6 +189,8 @@ class QuizViewController: UIViewController, QuizViewDelegate {
         wordModel = wordModel.getWord(quizQuestion)!
         answerModel.setAnswer(answerModel, word: wordModel)
         print(wordModel)
+        
+        return isCorrect
         
     }
     
